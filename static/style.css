@@ -1,0 +1,20 @@
+body {
+    font-family: monospace;
+    font-size: 12px;
+    width: 420px;
+    margin: 25px auto;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+hr {
+    height: 1px;
+    border: none;
+    background-color: black;
+}
+
+.right {
+    text-align: right;
+}
