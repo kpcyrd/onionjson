@@ -2,6 +2,7 @@
 from flask import Flask, render_template
 from subprocess import check_output, CalledProcessError
 from hashlib import sha256
+import json
 import re
 
 TIMEOUT = 20
@@ -38,10 +39,14 @@ def proxy(onion, path):
         return '', 451
 
     url = 'http://%s.onion/%s' % (onion, path)
+
     try:
-        return get(url), 200, HEADERS
-    except CalledProcessError:
+        resp = get(url)
+        json.loads(resp)
+    except:
         return '', 502
+
+    return resp, 200, HEADERS
 
 
 def get(url):
