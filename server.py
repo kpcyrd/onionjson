@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from flask import Flask, render_template
-from subprocess import check_output, CalledProcessError
+from subprocess import check_output
 from hashlib import sha256
 import json
 import re
