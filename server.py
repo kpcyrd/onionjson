@@ -56,7 +56,7 @@ def get(url):
 def is_blacklisted(onion):
     h = sha256(onion).hexdigest()
     with open(BLACKLIST) as f:
-        return h in [x.strip() for x in f]
+        return [x for x in f if x.strip() == h]
 
 
 if __name__ == '__main__':
